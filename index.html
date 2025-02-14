@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<title>pluss.dev Portfolio</title>
+<link rel="icon" href="./logo.png" type="">
+
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<!-- Navbar -->
+<nav id="navbar">
+    <div class="container">
+        <div class="nav-content">
+
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="./logo.png" alt="" style="width: 35px; height: 35px;">
+            <p> pluss.dev</p>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="nav-links">
+          <button onclick="scrollToSection('about')"> <b>About</b> </button>
+          <button onclick="scrollToSection('e-commerce')"> <b>Services</b> </button>
+          <button onclick="scrollToSection('portfolio')"> <b>Portfolio</b> </button>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu">
+      <button onclick="scrollToSection('about')">About</button>
+      <button onclick="scrollToSection('e-commerce')">Services</button>
+      <button onclick="scrollToSection('portfolio')">Portfolio</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>web solutions with <span>pluss.dev</span></h1>
+        <p>Full-stack web developer & E-commerce stores realizer</p>
+        <a href="https://linktr.ee/pluss.dev" target="_blank" class="linktree-button">
+            <span>Linktree</span>
+            <i class="fas fa-link"></i>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p><b>I'm mehdi,</b> a passionate web developer with expertise in creating georgeous and functional <b>websites and E commerce shops</b>.
+             With experience in both <b>front-end and back-end development,</b> I bring ideas to life through clean code and modern design principles.</pr>
+          <p>My approach combines <b>technical excellence</b> with <b>creative problem-solving</b> and <b>excellent communication</b> for client satisfaction, ensuring that every project not only meets but exceeds expectations.</p>
+          <div class="social-links">
+            <a href="https://github.com/mehdevv" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kernou-mehdi-816653284/" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a href="mailto:kernoumehdi17@gmail.com">
+                <i data-lucide="mail"></i>
+              </a>
+            <a href="https://instagram.com/pluss.dev" target="_blank" >
+               <i data-lucide="instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&q=80" alt="Working on code">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- E-Commerce Section -->
+  <section id="e-commerce" class="e-commerce">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="e-commerce-grid" id="e-commerce-grid"></div>
+    </div>
+  </section>
+
+<!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <p style="text-align: center; font-weight: bold;" >you can contact us on watsapp now !</p>
+<div style=" display: flex; justify-content: center;">
+      
+    <a href="https://wa.me/213542452129" target="_blank" class="linktree-button">
+        <span>watsapp</span>
+        <i class="fas fa-link"></i>
+    </a>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="background-color: rgba(255, 255, 255, 0.05);">
+      <p>© 2024 mehde.dev. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
