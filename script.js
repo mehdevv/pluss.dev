@@ -147,8 +147,12 @@ function createSlider(container, slides) {
   const totalSlides = slides.length;
   
   function updateSlider() {
-    const slideWidth = 100 / getSlidesPerView();
+    const slidesPerView = getSlidesPerView();
+    const slideWidth = 100 / slidesPerView;
     sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+    
+    // Update button states
+    updateButtonStates();
   }
   
   function getSlidesPerView() {
@@ -157,18 +161,52 @@ function createSlider(container, slides) {
     return 1;
   }
   
+  function updateButtonStates() {
+    const slidesPerView = getSlidesPerView();
+    const maxIndex = totalSlides - slidesPerView;
+    
+    // Update prev button state
+    if (currentIndex <= 0) {
+      prevButton.classList.add('disabled');
+    } else {
+      prevButton.classList.remove('disabled');
+    }
+    
+    // Update next button state
+    if (currentIndex >= maxIndex) {
+      nextButton.classList.add('disabled');
+    } else {
+      nextButton.classList.remove('disabled');
+    }
+  }
+  
   prevButton.addEventListener('click', () => {
-    currentIndex = Math.max(0, currentIndex - 1);
-    updateSlider();
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
   });
   
   nextButton.addEventListener('click', () => {
-    currentIndex = Math.min(totalSlides - getSlidesPerView(), currentIndex + 1);
+    const slidesPerView = getSlidesPerView();
+    if (currentIndex < totalSlides - slidesPerView) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+  
+  // Update slider on window resize
+  window.addEventListener('resize', () => {
+    // Make sure currentIndex is valid after resize
+    const slidesPerView = getSlidesPerView();
+    const maxIndex = totalSlides - slidesPerView;
+    currentIndex = Math.min(currentIndex, maxIndex);
+    if (currentIndex < 0) currentIndex = 0;
+    
     updateSlider();
   });
   
-  window.addEventListener('resize', updateSlider);
-  
+  // Initial update
   updateSlider();
   lucide.createIcons();
 }
