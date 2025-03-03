@@ -60,11 +60,10 @@ const ecommerceProjects = [
     image: "img/QRS.png",
     features: [
       "no subscription needed",
-      "add or remove any information you want",
       "QR code with your logo",
       "adding functions and animation for better user experience",
       "showing contact of your buisness online",
-      "could be added to a physical visit card to be scanned or printed physically",
+      "added to a visit card or printed to be scanned",
     ],
   },
 ];
