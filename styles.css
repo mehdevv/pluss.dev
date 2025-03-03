@@ -4,6 +4,7 @@
   --gray-700: #374151;
   --gray-600: #4b5563;
   --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
 }
 
 * {
@@ -441,6 +442,11 @@ footer {
 
 .slider-button:hover {
   background-color: #004bb5;
+}
+
+.slider-button.disabled {
+  background-color: var(--gray-400);
+  cursor: default;
 }
 
 .slider-dots {
