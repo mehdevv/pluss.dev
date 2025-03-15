@@ -19,7 +19,7 @@ const projects = [
     description: "Fully personalized portfolio and services showcase for a consultant in the field of management and banks.",
     image: "img/ABD.png",
     technologies: ["HTML", "CSS", "JS", "PHP", "mySQL"],
-    demoUrl: "https://mehdevv.github.io/abdeddaim1/",
+    demoUrl: "https://mehdevv.github.io/abdeddaim/",
   },
   {
     title: "QR code logo + web page",
