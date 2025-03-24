@@ -1,0 +1,932 @@
+/* Add this at the top of your CSS file to import the Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Base styles */
+:root {
+  --primary: #0061f2;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--gray-700);
+  background-color: white;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Typography */
+h1,
+h2 {
+  color: var(--gray-700);
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.weighttedbutton {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Navbar */
+#navbar {
+  width: 100%;
+  z-index: 50;
+  transition: all 0.3s;
+}
+
+#navbar.fixed {
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-links button,
+.mobile-menu button {
+  background: none;
+  border: none;
+  color: var(--gray-700);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links button:hover,
+.mobile-menu button:hover {
+  color: var(--primary);
+}
+
+.mobile-menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--gray-700);
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  padding: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.mobile-menu.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, rgba(0, 97, 242, 0.05), white);
+  padding: 2rem 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+}
+
+.linktree-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background-color: #0061f2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  transition: background-color 0.3s ease;
+  gap: 10px;
+}
+
+.linktree-button:hover {
+  background-color: #004bb5;
+}
+
+.linktree-button i {
+  font-size: 1.25rem;
+  color: white;
+}
+
+/* Social Icons */
+.wrapper {
+  display: flex;
+  list-style: none;
+  padding-top: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* About Section */
+.about {
+  padding: 3rem 0;
+  background-color: white;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Change the hover behavior for bold text in the about section */
+/* Remove the individual hover effect on bold elements */
+.about-text b {
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Remove this individual hover rule */
+/* Add a new rule to change all bold elements when hovering over the paragraph */
+.about-text p:hover b {
+  color: var(--primary);
+  cursor: default;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--gray-600);
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+}
+
+.about-image {
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover {
+  transform: translateY(-10px) rotate(2deg);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.alink:link {
+  color: #0061f2;
+}
+
+.alink:visited {
+  color: #0061f2;
+}
+
+.alink:hover {
+  color: rgb(0, 10, 148) 61f2;
+}
+
+.alink:active {
+  color: #0061f2;
+}
+
+/* Portfolio and E-Commerce Sections */
+.portfolio,
+.e-commerce {
+  padding: 3rem 0;
+}
+
+.portfolio {
+  background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.05));
+}
+
+.e-commerce {
+  background-color: white;
+}
+
+.portfolio-grid,
+.e-commerce-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  height: 500px; /* Fixed height for cards */
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  color: var(--gray-600);
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+/* Add specific styling for portfolio card descriptions */
+.portfolio .card-description {
+  overflow-y: auto;
+  max-height: 120px; /* Set max height for scrollable area */
+  padding-right: 0.5rem; /* Add some padding for the scrollbar */
+}
+
+/* Add scrollbar styling for portfolio card descriptions */
+.portfolio .card-description::-webkit-scrollbar {
+  width: 4px;
+  margin-left: 50px;
+
+}
+
+.portfolio .card-description::-webkit-scrollbar-track {
+  background: var(--gray-300);
+  border-radius: 10px;
+}
+
+.portfolio .card-description::-webkit-scrollbar-thumb {
+  background: var(--gray-600);
+  border-radius: 10px;
+}
+
+/* New scrollable content container for services cards */
+.scrollable-content {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding-right: 0.5rem; /* Add some padding for the scrollbar */
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Custom scrollbar for scrollable content */
+.scrollable-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: var(--gray-300);
+  border-radius: 10px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: var(--gray-600);
+  border-radius: 10px;
+}
+
+/* Feature list styling */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  color: var(--gray-600);
+}
+
+.feature-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* tech icons */
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tech-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 97, 242, 0.1);
+  color: var(--primary);
+  padding: 0.5rem;
+  border-radius: 9999px;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hover animations for tech icons */
+.tech-tag:hover {
+  background-color: rgba(0, 97, 242, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 97, 242, 0.2);
+}
+
+.tech-tag:hover .tech-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Add a subtle pulse animation on hover */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 97, 242, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 97, 242, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 97, 242, 0);
+  }
+}
+
+.tech-tag:hover {
+  animation: pulse 1.5s infinite;
+}
+
+
+
+
+
+/* Blue bullet point */
+.feature-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gray-600);
+}
+
+
+
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: auto;
+}
+
+.tech-tag {
+  background-color: rgba(0, 97, 242, 0.1);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.card-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.review-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 97, 242, 0.1);
+  color: var(--primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.review-project-btn:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 97, 242, 0.2);
+}
+
+.review-project-btn:active {
+  transform: translateY(0);
+}
+
+.review-project-btn i {
+  transition: transform 0.3s ease;
+}
+
+.review-project-btn:hover i {
+  transform: rotate(15deg);
+}
+
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--gray-600);
+}
+
+/* Slider Styles */
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hidden-element {
+  opacity: 0;
+  transform: translateY(50px); /* Move the element down initially */
+  animation: fadeInUp 1s ease forwards; /* Animation to appear */
+  animation-delay: 0s;
+}
+
+/* Keyframes for the animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
+  }
+}
+
+/* Add these styles to your CSS file */
+.typing-container {
+  display: inline-block;
+  position: relative;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: var(--primary);
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.brand-text {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+
+
+
+/* Ensure the typing text inherits the same styling as your original h1 */
+#typing-text {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* typing animation */
+.typing-container-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing-container {
+  position: relative;
+  text-align: center;
+}
+
+.typing-area {
+  display: inline-block;
+  min-height: 1.2em; /* Fixed height based on your font size */
+  min-width: 300px; /* Set a minimum width that can fit your full text */
+  position: relative;
+  text-align: center;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: var(--primary);
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  vertical-align: text-bottom;
+  position: relative;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.brand-text {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Ensure the typing text inherits the same styling as your original h1 */
+#typing-text {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .typing-area {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-area {
+    min-width: 200px;
+  }
+}
+
+
+
+
+/* Trigger the animation only when the element is scrolled into view */
+.hidden-element:nth-of-type(1) {
+  animation-delay: 0.3s; /* Delay for the first element */
+}
+
+.hidden-element:nth-of-type(2) {
+  animation-delay: 0.6s; /* Delay for the second element */
+}
+
+.hidden-element:nth-of-type(3) {
+  animation-delay: 0.9s; /* Delay for the third element */
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.slider-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-button:hover {
+  background-color: #004bb5;
+}
+
+.slider-button.disabled {
+  background-color: var(--gray-400);
+  cursor: default;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--gray-300);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dot.active {
+  background-color: var(--primary);
+}
+
+/* Image Preview Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.modal-content {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
+
+  .portfolio-grid,
+  .e-commerce-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .slider-slide {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-image {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid,
+  .e-commerce-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .slider-slide {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .portfolio-grid,
+  .e-commerce-grid {
+    max-width: none;
+  }
+}
+
