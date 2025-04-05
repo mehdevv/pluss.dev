@@ -235,6 +235,11 @@ h2 {
   }
 }
 
+.titleresizer{
+  margin: auto;
+  max-width: 90%;
+}
+
 /* Dark Mode Toggle */
 .dark-mode-toggle {
   background-color: transparent;
